@@ -49,7 +49,7 @@ else: print(0)
 """
 # 6번 1085(직사각형 탈출)
 
-x, y, w, h = input().split()
+""" x, y, w, h = input().split()
 x = int(x)
 y = int(y)
 w = int(w)
@@ -60,5 +60,13 @@ b = (h-y)
 short_box = [x, y, w, h, a, b]
 
 short = min(short_box)
-print(short)
+print(short) """
+
+# 7번 2739(구구단)
+
+""" N=int(input())
+for i in range(1,10):
+    print(f'{N} * {i} = {N*i}') """
+
+
 
