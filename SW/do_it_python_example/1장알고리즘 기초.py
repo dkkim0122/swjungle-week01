@@ -45,7 +45,7 @@ i=1
 while i<=n:
      sum +=i
      i+=1
-print(f'1qnxj {n}까지 정수의 합은 {sum}입니다.')
+print(f'1부터 {n}까지 정수의 합은 {sum}입니다.')
 
 print(f'current i : {i}') #n+ 1 이 출력됨
  """
@@ -138,7 +138,7 @@ print() """
 # 1-13 위의 예제 효율화 하기
 """ print('+와 -를 번갈아 출력합니다')
 n= int(input('몇 개를 출력할까요? : '))
-for _ in range(n//2): #n//2는 몫을 구하는 값으로 짝수일때 +- 한쌍씩 나오도록했음
+for _ in range(n//2): #n//2는 몫을 구하는 값으로 짝수일때 +- 한쌍씩 나오도록했음 for 문에 (_)를 사용한 이유는 for문에서 range()함수가 for문을 순환하며 반환하는 값을 사용할 필요가 없기 때문
     print('+-',end='')
 if n%2:
     print('+',end='') #n이 홀수일때 +출력

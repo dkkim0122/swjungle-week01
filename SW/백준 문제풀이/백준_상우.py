@@ -69,4 +69,17 @@ for i in range(1,10):
     print(f'{N} * {i} = {N*i}') """
 
 
+# 8번 10950(A+b-3) 두 정수를 입력받아 덧셈 표현
 
+N = int(input())
+A=[None]*N
+B=[None]*N
+for i in range(N):
+    a, b=input().split()
+    a=int(a)
+    b=int(b)
+    A[i]=a
+    B[i]=b
+
+for i in range(N):
+    print(A[i]+B[i])
