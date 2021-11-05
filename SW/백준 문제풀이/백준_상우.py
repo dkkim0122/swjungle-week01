@@ -47,7 +47,7 @@ if ((year%4==0)and(year%100 != 0))or(year%400==0):
 else: print(0)
 
 """
-#6번 1085(윤년)
+#6번 1085(직사각형 탈출)
 
 x, y, w, h = input().split()
 x=int(x)
