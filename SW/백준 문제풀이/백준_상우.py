@@ -71,7 +71,7 @@ for i in range(1,10):
 
 # 8번 10950(A+b-3) 두 정수를 입력받아 덧셈 표현
 
-N = int(input())
+""" N = int(input())
 A=[None]*N
 B=[None]*N
 for i in range(N):
@@ -83,3 +83,19 @@ for i in range(N):
 
 for i in range(N):
     print(A[i]+B[i])
+ """
+# 9번 2438 별찍기
+
+""" N=int(input())
+
+for i in range(N):
+    for _ in range(i+1):
+     print('*',end='')
+    print() """
+
+# 10번 10871
+
+N, X = input().split()
+N=int(N)
+X=int(X)
+
