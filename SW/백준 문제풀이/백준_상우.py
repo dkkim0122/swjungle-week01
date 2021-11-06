@@ -153,7 +153,7 @@ for i in range(N):
 
  # 13번 4344 평균은 넘겠지
 
-cls = int(input())
+""" cls = int(input())
 SCORE = [None]*cls
 
 for i in range(cls):
@@ -177,3 +177,41 @@ def per(a):
     
 for i in range(cls):
  print(f'{format(per(SCORE[i]),".3f")}%')
+ """
+
+#14번 2577 숫자의 개수
+
+""" a=int(input())
+b=int(input())
+c=int(input())
+
+#숫자를 문자열로 쪼개기
+D=list(str(a*b*c))
+# print(a*b*c)
+# print(D[0])
+N=['0','1','2','3','4','5','6','7','8','9']
+n=0
+while n<10:
+    count = 0
+    for i in range(len(D)):
+         if D[i]==N[n]:
+             count+=1
+    else:
+        print(count)
+        n+=1
+ """
+
+#15번 15596번 정수 N개의 합
+""" 
+a = [1,2,3]
+
+def solve(a: list) -> int:
+    sum=0
+    for i in range (len(a)):
+        sum += a[i]
+    return sum
+
+print(solve(a)) """
+
+#16번 11654
+
