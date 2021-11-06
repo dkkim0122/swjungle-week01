@@ -103,9 +103,9 @@ for i in range(N):
         print(L[i],end=' ')
  """
 
- #11번 최댓값 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오
+ #11번 8958 최댓값 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오
 
-from typing import Sequence
+""" from typing import Sequence
 
 def max(a:Sequence):
     
@@ -121,9 +121,32 @@ A=[None]*9
 for i in range(9):
     A[i]=int(input())
 
-print(max(A), A.index( max(A) )+1, sep='\n')
+print(max(A), A.index( max(A) )+1, sep='\n') """
 
+# 12번 4344 ox퀴즈
+""" 
+N=int(input())
+test=[None]*N
 
+def OXscore(A):
+    a=len(A)
+    i=0
+    Ocount = 0
+    score =0
 
+    while i<=a-1:
+     if A[i]=='O':
+        Ocount +=1
+        score += Ocount
+        i += 1
+     else:
+        Ocount = 0
+        i+= 1
+    return score
 
+for i in range(N):
+   test[i]=input('')
+for i in range(N):
+    print(OXscore(test[i]))
 
+ """
