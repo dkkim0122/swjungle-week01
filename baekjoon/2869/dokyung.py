@@ -1,12 +1,8 @@
 
 climb, fall, height = map(int, input().split())
 
-day = 0
+ratio = (height - fall) / (climb - fall)
 
-expect = (height - climb) / (climb - fall)
-
-while True:
-    day += 1
-    if day >= expect:
-        print(day + 1)
-        break
+if ratio == int(ratio):
+    print(int(ratio))
+else: print(int(ratio) + 1)
