@@ -103,7 +103,7 @@ for i in range(N):
         print(L[i],end=' ')
  """
 
- #11번 8958 최댓값 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오
+# 11번 8958 최댓값 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오
 
 """ from typing import Sequence
 
@@ -151,7 +151,7 @@ for i in range(N):
 
  """
 
- # 13번 4344 평균은 넘겠지
+# 13번 4344 평균은 넘겠지
 
 """ cls = int(input())
 SCORE = [None]*cls
@@ -179,7 +179,7 @@ for i in range(cls):
  print(f'{format(per(SCORE[i]),".3f")}%')
  """
 
-#14번 2577 숫자의 개수
+# 14번 2577 숫자의 개수
 
 """ a=int(input())
 b=int(input())
@@ -201,7 +201,7 @@ while n<10:
         n+=1
  """
 
-#15번 15596번 정수 N개의 합
+# 15번 15596번 정수 N개의 합
 """ 
 a = [1,2,3]
 
@@ -213,13 +213,13 @@ def solve(a: list) -> int:
 
 print(solve(a)) """
 
-#16번 11654 아스키코드
+# 16번 11654 아스키코드
 """ 
 n = input()
 print(ord(n)) #ord() 입력된 문자를 아스키 코드값으로 반환, chr() 아스키코드를 문자로 반환
  """
 
-#17번 2675 문자열 반복
+# 17번 2675 문자열 반복
 
 """ case = int(input())
 test = [None]*case
@@ -237,10 +237,35 @@ for n in range(case):
     else: print(test[n][1][(a-1)]*test[n][0], sep='\n')
  """
 
-#18번 1152번 단어의 개수
+# 18번 1152번 단어의 개수
 
 """ a=input().split()
 print(len(a))
  """
 
- 
+# 19번 2908번 상근이동생 상수
+
+""" 
+
+a,b=input().split()
+a=int(a[::-1])
+b=int(b[::-1])
+
+if a>b:
+    print(a)
+else : 
+    print(b)
+
+"""
+
+# 20번 2869 달팽이는 올라가고 싶다.
+
+""" 
+A, B, V = map(int,input().split())
+a = (V-A)%(A-B)
+b = (V-A)//(A-B)
+
+if(a==False):
+    print(b+1)
+else:
+    print(b+2)     """
