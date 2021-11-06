@@ -1,42 +1,32 @@
-def max_of_list(a:list) -> int:
-    max = 0
-    for i in range(len(a) - 1):
-        if (a[i+1] - a[i]) > max:
-            max = a[i+1] - a[i]
-    return max
+# 리스트.sort()를 사용하면 리스트 내 원소들을 정렬할 수 있다.
 
-def make_list(a:list):
-    lst = []
-    for i in range(len(a)):
-        if a[i] != 0:
-            lst.append(a[i])
-    return lst
+def max_of(a:list):
+    max = 0
+    for i in range(1, len(a)):
+        if a[i] - a[i-1] > max:
+            max = a[i] - a[i-1]
+    return max
 
 if __name__ =='__main__':
     a, b = map(int, input().split())
 
     n = int(input())
 
-    x = [0 for _ in range(a + 1)]
-    y = [0 for _ in range(b + 1)]
-    x[a] = a
-    y[b] = b
-    
+    x = [0, a]
+    y = [0, b]
+
     for i in range(n):
-
-
         x_or_y, num = map(int, input().split())
 
         if x_or_y == 1:
-            x[num] = num
+            x.append(num)
         elif x_or_y == 0:
-            y[num] = num
+            y.append(num)
 
+    x.sort()
+    y.sort()
 
-    x1 = make_list(x)
-    y1 = make_list(y)
-
-    area = max_of_list(x1) * max_of_list(y1)
+    area = max_of(x) * max_of(y)
 
     print(area)
 
