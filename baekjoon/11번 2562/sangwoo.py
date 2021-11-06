@@ -15,3 +15,4 @@ for i in range(9):
     A[i]=int(input())
 
 print(max(A), A.index( max(A) )+1, sep='\n')
+
