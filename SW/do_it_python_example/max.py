@@ -1,3 +1,5 @@
+from typing import Any, Sequence
+
 def max_of(a: Sequence) -> Any: #건네받은 a의 자료형은 시퀀스형이며 반환값은 임의의 자료형이다.
 
     # 시퀀스형 a원소의 최댓값을 반환"

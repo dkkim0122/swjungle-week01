@@ -52,7 +52,7 @@ print(f'이 가운데 최댓값은 {max_of(x)}입니다.') """
 
 # 2C-1 리스트의 모든 원소를 스캔하기(원소 수를 미리 파악)
  
-x=['snagwoo', 'Gorge', 'Yujin']
+""" x=['snagwoo', 'Gorge', 'Yujin']
 
 for i in range(len(x)):
     print(f'x[{i}] ={x[i]}')
@@ -62,5 +62,18 @@ y=['snagwoo', 'Gorge', 'Yujin']
 
 for i, name in enumerate(x):         #enumerate() 함수는 인덱스와 원소를 짝찌어 튜플로 꺼내는 내장함수이다. 
     print(f'x[{i}] ={x[i]}')
+ """
 
+# 2-4 리스트 역순으로 정렬하기
 
+""" x=[1,2,3]
+x.reverse() #리스트 x의 원소를 역순으로 정렬
+print(x)
+
+y=list(reversed(x)) #다시 역순으로 정렬해 y로 참조
+print(y) """
+
+# 리스트 값의 위치(인덱스)찾기
+
+x=[1,2,3,5,6,7]
+print(x.index(3)+1) #단순히 인덱스만 찾으면 0부터 시작해서 1이 작음

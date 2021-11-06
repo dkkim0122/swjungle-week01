@@ -93,11 +93,37 @@ for i in range(N):
      print('*',end='')
     print() """
 
-# 10번 10871
-
+# 10번 10871 x보다 작은수 찾기
+""" 
 N, X = map(int,input().split())
 L = list(map(int,input().split()))
 
 for i in range(N):
     if L[i] <X:
         print(L[i],end=' ')
+ """
+
+ #11번 최댓값 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오
+
+from typing import Sequence
+
+def max(a:Sequence):
+    
+    maximum = a[0]
+    
+    for i in range(1, len(a)):
+        if a[i]>maximum:
+            maximum = a[i]
+    return maximum
+    
+A=[None]*9
+
+for i in range(9):
+    A[i]=int(input())
+
+print(max(A), A.index( max(A) )+1, sep='\n')
+
+
+
+
+
