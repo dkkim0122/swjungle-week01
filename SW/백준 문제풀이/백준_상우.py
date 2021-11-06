@@ -96,7 +96,7 @@ for i in range(N):
 # 10번 10871 x보다 작은수 찾기
 """ 
 N, X = map(int,input().split())
-L = list(map(int,input().split()))
+L = list(map(int,input().split())) #list(map(함수, 리스트)
 
 for i in range(N):
     if L[i] <X:
@@ -123,7 +123,7 @@ for i in range(9):
 
 print(max(A), A.index( max(A) )+1, sep='\n') """
 
-# 12번 4344 ox퀴즈
+# 12번 8958 ox퀴즈
 """ 
 N=int(input())
 test=[None]*N
@@ -150,3 +150,30 @@ for i in range(N):
     print(OXscore(test[i]))
 
  """
+
+ # 13번 4344 평균은 넘겠지
+
+cls = int(input())
+SCORE = [None]*cls
+
+for i in range(cls):
+    SCORE[i]=list(map(int,input().split()))
+
+def avg(a):
+    sum =0
+    for i in range(1,len(a)):
+        sum += a[i]
+
+    average=sum/a[0]
+
+    return average
+def per(a):
+    count=0
+    for i in range (1,len(a)):
+        if a[i]>avg(a):
+            count+=1
+    percentage = round(count/a[0]*100,3)
+    return percentage
+    
+for i in range(cls):
+ print(f'{format(per(SCORE[i]),".3f")}%')

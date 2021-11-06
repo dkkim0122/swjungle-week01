@@ -1,23 +1,24 @@
-N=int(input())
-test=[None]*N
+cls = int(input())
+SCORE = [None]*cls
 
-def OXscore(A):
-    a=len(A)
-    i=0
-    Ocount = 0
-    score =0
+for i in range(cls):
+    SCORE[i]=list(map(int,input().split()))
 
-    while i<=a-1:
-     if A[i]=='O':
-        Ocount +=1
-        score += Ocount
-        i += 1
-     else:
-        Ocount = 0
-        i+= 1
-    return score
+def avg(a):
+    sum =0
+    for i in range(1,len(a)):
+        sum += a[i]
 
-for i in range(N):
-   test[i]=input('')
-for i in range(N):
-    print(OXscore(test[i]))
+    average=sum/a[0]
+
+    return average
+def per(a):
+    count=0
+    for i in range (1,len(a)):
+        if a[i]>avg(a):
+            count+=1
+    percentage = round(count/a[0]*100,3)
+    return percentage
+    
+for i in range(cls):
+ print(f'{format(per(SCORE[i]),".3f")}%')

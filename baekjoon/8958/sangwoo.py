@@ -1,17 +1,23 @@
-from typing import Sequence
+N=int(input())
+test=[None]*N
 
-def max(a:Sequence):
-    
-    maximum = a[0]
-    
-    for i in range(1, len(a)):
-        if a[i]>maximum:
-            maximum = a[i]
-    return maximum
-    
-A=[None]*9
+def OXscore(A):
+    a=len(A)
+    i=0
+    Ocount = 0
+    score =0
 
-for i in range(9):
-    A[i]=int(input())
+    while i<=a-1:
+     if A[i]=='O':
+        Ocount +=1
+        score += Ocount
+        i += 1
+     else:
+        Ocount = 0
+        i+= 1
+    return score
 
-print(max(A), A.index( max(A) )+1, sep='\n')
+for i in range(N):
+   test[i]=input('')
+for i in range(N):
+    print(OXscore(test[i]))
