@@ -1,35 +1,21 @@
+import sys
+input = sys.stdin.readline
 
-def is_prime(a:int) -> bool:
-    if a == 1:
-        return False
-    for i in range(2, a):
-        if a % i == 0:
-            return False
-    return True
+num = 10000
 
-def prime_list(a:int) -> list:
-    lst = []
-    if a == 1:
-        return lst    
-    for i in range(2, a + 1):
-        if is_prime(i) == True:
-            lst.append(i)
-    return lst
+is_prime = [False, False] + [True]*(num-1)
+for i in range(2, num + 1):
+    if is_prime[i] == True:
+        for j in range(i * 2, num+1, i):
+            is_prime[j] = False
 
-loop = int(input())
+repeat = int(input())
 
-for i in range(loop):
+for i in range(repeat):
     n = int(input())
-    small_primes = prime_list(n//2)
-    max = 0
+    half = n//2
 
-    for i in range(len(small_primes)):
-        small = small_primes[i]
-        big =  n - small
-
-        if is_prime(big) == True:
-            if small > max:
-                max = small
-
-    print(f'{max} {n-max}')
-    
+    for j in range(half, 1, -1):
+        if is_prime[j] == True and is_prime[n-j] == True:
+            print(j, n - j)
+            break

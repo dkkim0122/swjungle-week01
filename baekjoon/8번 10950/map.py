@@ -1,16 +1,14 @@
 # map()을 이용해서 코드 간결하게 줄이기.
 
 import sys
-input = sys.stdin.readline
 
-num_test = int(input())
+num_test = int(sys.stdin.readline())
 
 case = []
 
 for i in range(num_test):
-
-    a, b = map(int, input().split())
-    case.append(a + b)
+    nums = list(map(int, sys.stdin.readline().split()))
+    case.append(nums[0] + nums[1])
 
 for i in range(num_test):
     print(case[i])
