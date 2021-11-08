@@ -1,3 +1,4 @@
+
 import sys, math
 
 n = int(input())
@@ -9,19 +10,20 @@ def prime(k):
         return False
     if k == 2:
         return True
-    for p in range(2, k):
-        if k % p == 0:
-            return False
+    if k == 3:
+        return True
+    if k % 2 == 0:
+        return False
+    else:
+        tennis = math.ceil(math.sqrt(k)) + 1
+        for p in range(3, tennis, 2):
+            if k % p == 0:
+                return False
     return True
 
 
 for i in a:
-    a = [2, 3]
-    # 중요
-    k = math.ceil(math.sqrt(i))
-    for j in range(5, k, 2):
-        if prime(j):
-            a.append(j)
+
     x = i // 2
     y = i // 2
 

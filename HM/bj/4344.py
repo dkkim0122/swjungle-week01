@@ -4,7 +4,6 @@ C = int(input())
 
 for i in range(C):
     a = list(map(int, sys.stdin.readline().split()))
-
     avg = sum(a[1:]) / a[0]
     count = 0
     for j in range(1, len(a)):
