@@ -14,7 +14,7 @@ def insertion_sort(a: MutableSequence) -> None:
 
 if __name__ == "__main__":
     n = int(input())
-    lst = [input().strip() for _ in range(n)]
+    lst = [int(input().strip()) for _ in range(n)]
 
     insertion_sort(lst)
 
