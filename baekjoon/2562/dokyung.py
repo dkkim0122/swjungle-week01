@@ -3,7 +3,7 @@
 max = 0
 index = 0
 
-for i in range(9):
+for i in range(5):
     a = int(input())
     if a > max:
         max = a
@@ -11,3 +11,5 @@ for i in range(9):
 
 print(max)
 print(index)
+
+
