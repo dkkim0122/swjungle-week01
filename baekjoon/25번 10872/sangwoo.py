@@ -1,12 +1,13 @@
+
+
 def fac(a: int):
-     n = 1
-      c = 1
-       if a == 0:
-            n = 1
-        else:
-            for i in range(1, a+1):
-                n *= i
-        return n
+    n = 1
+    if a == 0:
+        n = 1
+    else:
+        for i in range(1, a+1):
+            n *= i
+    return n
 
 
 a = int(input())
