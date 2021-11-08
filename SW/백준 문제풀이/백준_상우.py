@@ -269,3 +269,40 @@ if(a==False):
     print(b+1)
 else:
     print(b+2)     """
+
+# 21번 1987번 소수찾기
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+y=list(map(int,input().split()))
+count = 0
+
+def prime(a):
+    if a==1:
+        return False
+    for i in range(2,a):
+        if a%i == 0 :
+           return False
+    else: return True
+
+
+for i in range(n):
+    if prime(y[i])==True:
+        count +=1
+print(count) """
+
+
+
+# 리스트 안에서 값의 갯수를 찾기 
+""" x = [1, 1, 2, 4, 5, 6, 6, 6, 7, 6, 7, 8, 9]
+y = [6,7,1]
+print()
+count = 0
+for i in range(len(y)):
+    a=x.count(y[i])
+    if a != 0:
+     count += a
+print(count) """
+
+#22 9020 골드바흐의 추측 https://www.acmicpc.net/problem/9020
