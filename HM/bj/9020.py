@@ -1,4 +1,4 @@
-import sys
+import sys, math
 
 n = int(input())
 a = list(int(sys.stdin.readline().rstrip()) for _ in range(n))
@@ -16,8 +16,10 @@ def prime(k):
 
 
 for i in a:
-    a = []
-    for j in range(2, i):
+    a = [2, 3]
+    # 중요
+    k = math.ceil(math.sqrt(i))
+    for j in range(5, k, 2):
         if prime(j):
             a.append(j)
     x = i // 2
