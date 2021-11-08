@@ -293,8 +293,7 @@ for i in range(n):
 print(count) """
 
 
-
-# 리스트 안에서 값의 갯수를 찾기 
+# 리스트 안에서 값의 갯수를 찾기
 """ x = [1, 1, 2, 4, 5, 6, 6, 6, 7, 6, 7, 8, 9]
 y = [6,7,1]
 print()
@@ -305,27 +304,54 @@ for i in range(len(y)):
      count += a
 print(count) """
 
-#22 9020 골드바흐의 추측 https://www.acmicpc.net/problem/9020
+# 22 9020 골드바흐의 추측 https://www.acmicpc.net/problem/9020
 
-import sys
+
+""" import sys
 input = sys.stdin.readline
 
 def prime(p):
     if p==1:
-        return True
-    for i in range(2,p):
-        p%i=0
         return False
-    else:
-        return True
+    for i in range(2,p):
+        if p%i==0:
+            return False 
+    return True
 
 a = int(input())
-even = list(int(input()) for _ in range(a)) #list 에  a개 만큼 int형 값을 저장
-n=0
-while n<a:
-    x=2//n
-    y=2//n
-    b=[]
-    
+even = list(int(input().strip()) for _ in range(a)) #list 에  a개 만큼 int형 값을 저장
 
 
+for i in even:
+    x=i//2
+    y=i//2
+    while True:
+        if prime(x) and prime(y) :
+           break
+        else :
+            x-=1
+            y+=1
+    print(x,y)
+ """
+
+# 23번 한수 https://www.acmicpc.net/problem/1065
+
+import sys
+input = sys.stdin.readline
+
+
+def hansu(N):
+    count = 0
+
+    for i in range(1, N+1):
+        n = list(map(int, str(i)))
+
+        if 1 <= i < 100:
+            count += 1
+        elif n[1] == (n[2]+n[0])/2:
+            count += 1
+    return count
+
+
+N = int(input())
+print(hansu(N))
