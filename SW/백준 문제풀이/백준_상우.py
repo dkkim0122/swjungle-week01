@@ -400,7 +400,7 @@ print(max(X)*max(Y)) """
 a = int(input())
 print(fac(a))
  """
- #재귀함수로 구하기 재귀함수의 예를 들뿐 효율적이진 않다. 
+# 재귀함수로 구하기 재귀함수의 예를 들뿐 효율적이진 않다.
 """ 
 def fac(n:int)->int:
     if n>0:
@@ -433,4 +433,56 @@ if N <= 20:
     move(N, 1, 3)
 
  """
+# 27번 N-Queen https://www.acmicpc.net/problem/9663
+""" import sys
+input: sys.stdin.readline
+N=int(input())
 
+pos = [0]*N  #각 열에 배치한 퀸의 위치
+flag_a = [False]*N #각 행에 퀸 배치 체크
+flag_b = [False]*(N*2-1) #오른위아래 대각선 배치 체크
+flag_c = [False]*(N*2-1) #왼쪽위아래 대각선 배치 체크
+count = 0 
+
+def set(i:int)->None:
+    global count
+
+    for j in range(N): #0행부터 놓는다.
+        if(not flag_a[j] and not flag_b[j+i]and not flag_c[i-j+(N-1)]):#행이 비어 있다면?
+            pos[i] = j
+            if i ==(N-1): 
+                count+=1
+            else:
+                flag_a[j] = flag_b[j+i] = flag_c[i-j+(N-1)] = True
+                set(i+1) #다음열에 퀸 배치
+                flag_a[j] = flag_b[j+i] = flag_c[i-j+(N-1)] = False
+
+set(0)
+print(count) """
+
+
+""" def promising(i):
+    for j in range(0, i):
+        # 새로운 퀸과 기존의 퀸이 같은 행에 있거나 대각선에 있을 경우
+        if row[j] == row[i] or abs(row[j]-row[i]) == (i-j):
+            return False
+    return True
+
+
+def N_queen(i):
+    global count
+    if i == N:
+        count += 1
+    else:
+        for j in range(N): #i열 0행부터 N-1행까지 퀸 배열
+            row[i] = j
+            if promising(i):
+                N_queen(i+1)
+
+
+N = int(input())
+row = [0]*(N*2-1)
+count = 0
+N_queen(0)
+print(count) """
+# 28번 Z https://www.acmicpc.net/problem/1074
