@@ -75,6 +75,7 @@ def dfs(depth):
             dfs(depth + 1)
             check[depth] = -1
 
+
 if __name__ == '__main__':
     answer = []
     n = int(stdin.readline())

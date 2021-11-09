@@ -29,6 +29,7 @@ hor.sort()
 new_ver = []
 new_hor = []
 
+
 for i in range(0, len(ver) - 1):
     new_ver.append(ver[i + 1] - ver[i])
 for i in range(0, len(hor) - 1):
