@@ -2,7 +2,7 @@ def z(N, r, c, first_num):
     if N==0:
         return first_num
     
-    size = 2**(N-1)
+    size = 2**(N-1)  # 4등분한사이즈 4
 
     if r < size and c < size:
         return z(N-1, r, c, first_num)
@@ -16,3 +16,7 @@ def z(N, r, c, first_num):
 N, r, c = map(int, input().split())
 
 print(z(N, r, c, 0))
+
+
+
+

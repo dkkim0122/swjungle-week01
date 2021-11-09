@@ -447,8 +447,8 @@ count = 0
 def set(i:int)->None:
     global count
 
-    for j in range(N): #0행부터 놓는다.
-        if(not flag_a[j] and not flag_b[j+i]and not flag_c[i-j+(N-1)]):#행이 비어 있다면?
+    for j in range(N): #0행부터 놓는다.   # i 열 j 행
+        if(not flag_a[j] and not flag_b[j+i]and not flag_c[i-j+(N-1)]):   #행이 비어 있다면 True가 아니라면?
             pos[i] = j
             if i ==(N-1): 
                 count+=1
@@ -486,3 +486,31 @@ count = 0
 N_queen(0)
 print(count) """
 # 28번 Z https://www.acmicpc.net/problem/1074
+""" N,r,c=map(int,input().split())
+
+def Z(s,N,r,c):
+
+    size = 2**(N-1)
+
+    if N==0:
+        return s
+    return Z( s + ( (r//size)*2 + (c//size) ) * pow(4,N-1)
+    ,N-1
+    ,r%size
+    ,c%size)
+
+print(Z(0,N,r,c))  """
+
+# 29번 수 정렬하기 https://www.acmicpc.net/problem/2750
+""" n= int(input())
+a=[None]*n
+
+for i in range(n):
+    a[i]=int(input())
+
+a = sorted(a)
+for i in range(n):
+    print(a[i])
+ """
+# 30번 수 정렬하기2 https://www.acmicpc.net/problem/2751 쉘 사용
+

@@ -1,26 +1,27 @@
-import sys
-
-
-def get_queen(n):
-    if n == N:
-        global count
-        count += 1
-    else:
-        for i in range(N):
-            board[n] = i
-            if checker(n):
-                get_queen(n + 1)
-
-
-def checker(n):
-    for i in range(n):
-        if (board[n] == board[i]) or (n - i == abs(board[n] - board[i])):
-            return False
-    return True
-
-
-N = int(sys.stdin.readline())
+N = int(input())
+pos = [0] * N
+flag = [False] * N
+flag_a = [False] * (N * 2 - 1)
+flag_b = [False] * (N * 2 - 1)
 count = 0
-board = [0] * N
-get_queen(0)
+
+
+def recur(i):
+    global count
+    for j in range(N):
+        if (not flag[j] and not flag_a[i + j] and not flag_b[i - j + N - 1]):
+            
+            pos[i] = j
+            
+            if i == N - 1:
+                count += 1
+            flag[j] = flag_a[i + j] = flag_b[i - j + N - 1] = True
+            recur(i + 1)
+            flag[j] = flag_a[i + j] = flag_b[i - j + N - 1] = False
+
+
+recur(0)
 print(count)
+
+
+
