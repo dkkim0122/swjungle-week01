@@ -27,11 +27,10 @@ def shaker_sort(list_):
 
 
 N = int(sys.stdin.readline())
-overlap_checklist = [None] * N
 data_list = [None] * N
 
 for i in range(N):
     data_list[i] = sys.stdin.readline().rstrip()
 
-data_list = sorted(data_list)
+data_list.sort()
 shaker_sort(data_list)
