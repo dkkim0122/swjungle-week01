@@ -143,7 +143,7 @@
 #     print()
 
 # 단어의 개수
-# print(len(input().split()))
+#  print(len(input().split()))
 
 # 상수
 # import sys
@@ -428,3 +428,5 @@
 #     if board[i]:
 #         for j in range(board[i]):
 #             print(i + 1)
+
+

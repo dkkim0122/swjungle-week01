@@ -5,22 +5,21 @@
 
 # 입력 :
 
+# 내가 푼 코드 (난잡함)
+
 import sys
 
 
-def dfs(i):
-    global path
-
+def dfs(now, i):
     if i == n - 1:
         # 마지막에 원래 도시로 돌아오는 메소드를 이따 check에 반영해줘야할듯
-
         path.append([k for k in check])
     else:
         for j in range(0, n):
             if j in check:
                 continue
             check[i] = j
-            dfs(i + 1)
+            dfs(0, i + 1)
             check[i] = -1
 
 
@@ -31,19 +30,58 @@ for _ in range(n):
 path = []
 check = [0] * n
 # 0 못들리게 0으로 만듦.
-dfs(0)
+dfs(0, 0)
 
 min_cost = 4000000
-print(path)
+# print(path)
 
 for i in range(len(path)):
     hap = 0
     for j in range(len(path[0])):
         if j == 0:
-            hap += cost[0][path[i][0]]
+            if cost[0][path[i][0]] == 0:
+                hap += min_cost
+            else:
+                hap += cost[0][path[i][0]]
         else:
-            hap += cost[path[i][j - 1]][path[i][j]]
-    print(hap)
+            if cost[path[i][j - 1]][path[i][j]] == 0:
+                hap += min_cost
+            else:
+                hap += cost[path[i][j - 1]][path[i][j]]
     min_cost = min(min_cost, hap)
 print(min_cost)
-# print(cost)
+
+# 남이 푼코드
+# import sys
+#
+#
+# def move(now, depth):
+#     global charge, ans
+#     if depth == N:
+#         if cost[now][0] > 0:
+#             ans = min(ans, charge + cost[now][0])
+#         return
+#     visit[now] = 1
+#     for i in link[now]:
+#         # False 일때 실행.
+#         if not visit[i]:
+#             charge += cost[now][i]
+#             move(i, depth + 1)
+#             charge -= cost[now][i]
+#     visit[now] = 0
+#
+#
+# N = int(sys.stdin.readline())
+# cost = list(list(map(int, sys.stdin.readline().split())) for _ in range(N))
+# visit = [0] * N
+# link = {}
+# charge, ans = 0, 10 ** 7
+#
+# for i in range(N):
+#     link[i] = []
+#     for j in range(N):
+#         if cost[i][j] > 0:
+#             link[i].append(j)
+#
+# move(0, 1)
+# print(ans)
