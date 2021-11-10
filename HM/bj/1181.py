@@ -31,6 +31,8 @@ data_list = [None] * N
 
 for i in range(N):
     data_list[i] = sys.stdin.readline().rstrip()
-
+print(sorted(data_list))
 data_list.sort()
 shaker_sort(data_list)
+
+

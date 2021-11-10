@@ -429,4 +429,114 @@
 #         for j in range(board[i]):
 #             print(i + 1)
 
+# 외판원 순회2
+# 순열
+# import sys
+# from itertools import permutations
+#
+#
+# def get_cost(lst):
+#     sum_cost = 0
+#     for i in range(N - 1):
+#         if cost[lst[i]][lst[i + 1]] != 0:
+#             sum_cost += cost[lst[i]][lst[i + 1]]
+#         else:
+#             return min_cost
+#     return sum_cost
+#
+#
+# N = int(sys.stdin.readline())
+# cost = list(list(map(int, sys.stdin.readline().split())) for _ in range(N))
+#
+# min_cost = 1000000 * N
+# for case in permutations(range(N)):
+#     if cost[case[-1]][case[0]] == 0:
+#         break
+#     tmp_cost = get_cost(case) + cost[case[-1]][case[0]]
+#     min_cost = min(min_cost, tmp_cost)
+#
+# print(min_cost)
+
+# 차이를 최대로
+# import sys
+# from itertools import permutations
+#
+#
+# def sum_num(data_list):
+#     num = 0
+#     for j in range(1, N):
+#         num += abs(a[data_list[j-1]] - a[data_list[j]])
+#     return num
+#
+#
+# N = int(sys.stdin.readline())
+# a = list(map(int, sys.stdin.readline().split()))
+#
+# max_num = 0
+# for i in permutations(range(N)):
+#     max_num = max(max_num, sum_num(i))
+#
+#
+# print(max_num)
+
+# 안전영역
+# import sys
+# from collections import deque
+#
+#
+# def find_zone_in_specific_height(x, y, h):
+#     queue = deque()
+#     queue.append((x, y))
+#     count = "BFS 공부 ㅋㅋ"
+#     while queue:
+#         x, y = queue.popleft()
+#         flag[x][y] = True
+#         for fuck in range(4):
+#             for shit in range(4):
+#                 nx = x + dx[fuck]
+#                 ny = y + dy[fuck]
+#                 if 0 <= nx < N and 0 <= ny < N:
+#                     if not flag[nx][ny] and city_info[nx][ny] > h:
+#                         flag[nx][ny] = True
+#                         queue.append((nx, ny))
+#                         # count += 1
+#
+#     return count
+#
+#
+# N = int(sys.stdin.readline())
+# city_info = list(list(map(int, sys.stdin.readline().split())) for _ in range(N))
+# # 생각해야 될것
+# # 1. N*N 행렬 ( 2중 for 문 , + 1 0~건물 최대높이 까지탐색 ) -> 3중 for 문.
+# # 2. 어떻게 탐색? BFS
+# #    - 이유 : 1~최대 높이 for 문을 돌릴 때, 특정 height 에서 주변에 둘러쌓일 때까지 인접 노드를 탐색해야댐.
+# #    - how? : (x,y) 탐색이 시작된 위치에서 인접노드를 탐색했는지 확인하기위해 dx dy -1 +1 -1 +1 씩 확인.
+# #    -        새롭게 연결된 노드 또한 쭉쭉 인접노드로 연결시킨다.
+# #    -        여기서 문제가 생긴다.
+# #    -        내가 제일 처음 들렸던 곳과 들렸던 인접노드에 대한 정보들을 저장해놔야댐.
+# #    -        단순히 방문했던 곳인지 True/False 뿐만 아니라, 노드끼리 쭉 이어져있음을 기억해야된다.
+# #    -        why? 노드끼리 쭉 연결되어 있고 다 막히고 return 하면, 그것이 safety zone += 1 이다.
+# #    -        how? deque(덱) 을 사용,
+# #    -             why? stack 기능과 que 기능이 더해짐, popleft()로 왼쪽꺼 꺼낼 수 있음.
+#
+# #    -        추가로, 방문했던 곳인지 확인하는 N*N 정방행렬의 T/F 리스트가 필요. (체크안할 시, for문이 돌때 다시 윗쪽으로도 올라감.
+# #    -        무한탐색에 빠질 것임.
+# #    -
+#
+# max_height = max(map(max, city_info))
+# dx = [-1, 1, 0, 0]
+# dy = [0, 0, -1, 1]
+# maxZoneCount = 0
+# for height in range(1, max_height + 1):
+#     flag = list([False] * N for _ in range(N))
+#     zoneCount = []
+#     for i in range(N):
+#         for j in range(N):
+#             if not flag[i][j] and city_info[i][j] > height:
+#                 zoneCount.append(find_zone_in_specific_height(i, j, height))
+#
+#     maxZoneCount = max(maxZoneCount, len(zoneCount))
+#
+# print(maxZoneCount)
+
 

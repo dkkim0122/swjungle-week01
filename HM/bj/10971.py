@@ -10,7 +10,7 @@
 import sys
 
 
-def dfs(now, i):
+def dfs(i):
     if i == n - 1:
         # 마지막에 원래 도시로 돌아오는 메소드를 이따 check에 반영해줘야할듯
         path.append([k for k in check])
@@ -30,7 +30,7 @@ for _ in range(n):
 path = []
 check = [0] * n
 # 0 못들리게 0으로 만듦.
-dfs(0, 0)
+dfs(0)
 
 min_cost = 4000000
 # print(path)
