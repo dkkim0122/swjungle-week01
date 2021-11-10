@@ -649,7 +649,6 @@ print(max(B))
 # 35번 외판원 순회 https://www.acmicpc.net/problem/10971
 
 import sys
-from itertools import permutations
 input = sys.stdin.readline
 
 def dfs(start, next, value, visited:list):
@@ -657,13 +656,14 @@ def dfs(start, next, value, visited:list):
 
     if len(visited)==N:
         if Route[next][start] !=0:
-            cost = min(cost, value+Route[next][start])
+            cost = min(cost, value + Route[next][start])
         return
     
     for i in range(N):
         if Route[next][i] != 0 and i != start and i not in visited:
             visited.append(i)
             dfs(start, i, value + Route[next][i], visited)
+            visited.pop()
 
 N = int(input().strip())
 Route = [None]*N
@@ -677,6 +677,7 @@ for i in range(N):
 print(cost)
     
     
+
 
 
 
