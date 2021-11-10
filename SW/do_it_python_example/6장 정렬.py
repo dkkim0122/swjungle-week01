@@ -74,4 +74,57 @@ if __name__ == '__main__':
         print(f'x[{i}] = {x[i]}')
 
  """
+
+ #6-17 도수 정렬 알고리즘
+
+import sys
+input = sys.stdin.readline
+
+
+def fsort(a:list , max:int):
+
+    n=len(a) #정렬할 배열
+    f=[0] * (max +1) #누적 도수 분포표 배열
+    b=[0] * n #작업용배열
+
+    for i in range(n): f[a[i]] +=1
+    for i in range(1,max+1): f[i]+=f[i-1]
+    for i in range(n-1,-1,-1):
+        f[a[i]] -=1
+        b[f[a[i]]] = a[i]
+    for i in range(n): a[i]=b[i]
+
+
+def count_sort(a:list):
+    fsort(a,max(a))
+
+
+
+N = int(input())
+x = [None]*N
+
+for i in range(N):
+    while True:
+        x[i] = int(input())
+        if x[i]>=0:
+            break
+
+count_sort(x)
+
+for i in range(len(x)):
+    print(x[i])
+
  
+
+"""  import sys
+
+N = int(sys.stdin.readline())
+a = [0] * 10000
+for i in range(N):
+    b = int(sys.stdin.readline().rstrip())
+    a[b - 1] += 1
+
+for j in range(10000):
+    if a[j]:
+        for k in range(a[j]):
+            print(j + 1) """

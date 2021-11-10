@@ -400,6 +400,7 @@ print(max(X)*max(Y)) """
 a = int(input())
 print(fac(a))
  """
+
 # 재귀함수로 구하기 재귀함수의 예를 들뿐 효율적이진 않다.
 """ 
 def fac(n:int)->int:
@@ -513,4 +514,85 @@ for i in range(n):
     print(a[i])
  """
 # 30번 수 정렬하기2 https://www.acmicpc.net/problem/2751 쉘 사용
+""" 
+def shell(a:list):
 
+    n=len(a)
+    h=n//2
+    while h>0:
+        for i in range(h,n):
+            j=i-h
+            tmp = a[i]
+            while j>=0 and a[j] > tmp :
+                a[j +h] = a[j]
+                j-=h
+            a[j+h] = tmp
+        h//=2
+
+
+x=int(input())
+a = [None]*x
+
+for i in range(x):
+    a[i] = int(input())
+
+shell(a)
+for i in range(x):
+    print(a[i]) """
+
+# 31번 수 정렬하기3 https://www.acmicpc.net/problem/10989 도수정렬 후명이꺼 참조
+""" 
+import sys
+
+N = int(sys.stdin.readline())
+a = [0] * 10000
+for i in range(N):
+    b = int(sys.stdin.readline().rstrip())
+    a[b - 1] += 1
+
+for j in range(10000):
+    if a[j]:
+        for k in range(a[j]):
+            print(j + 1)
+
+ """
+
+# 32번 단어정렬 https://www.acmicpc.net/problem/1181 
+""" import sys
+input=sys.stdin.readline
+
+def lensort_char(a:list):
+    a.sort()
+    n=len(a)
+
+    for i in range(1,n):
+        j=i
+        tmp = a[j] #문자의 길이
+        while j>0 and len(a[j-1]) > len(tmp): #앞의 수가 뒤의 수보다 크다면?
+                a[j]=a[j-1] #뒤의를 앞의수로 바꾸고
+                j-=1 
+                a[j]=tmp #앞자리의 수는 미리 빼두었던 뒷자리수로 바꾼다. 
+    
+    for i in range(n-1):
+        if a[i] != a[i+1]:
+            print(a[i])
+
+    print(a[n-1])
+
+
+n=int(input().strip())
+a=[None]*n
+
+for i in range(n):
+    a[i]=str(input().strip())
+
+lensort_char(a)
+
+ """
+# 함수이용
+""" a=set(a) #set 은 단순히 리스트를 set으로 바꿔줄 뿐 
+a=list(a)
+a.sort(key=len)
+ """
+""" for i in range(len(a)):
+    print(a[i]) """
