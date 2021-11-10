@@ -1,22 +1,26 @@
+""" import sys
+input = sys.stdin.readline """
+
 # 1번 2557 문제
 """ print('Hello World!') """
 
 # 2번 10869 두 자연수 A와 B가 주어진다. 이때, A+B, A-B, A*B, A/B(몫), A%B(나머지)를 출력하는 프로그램을 작성하시오.
 # 두 자연수 A와 B가 주어진다. (1 ≤ A, B ≤ 10,000)
 
-""" 
+"""
 A, B = input().split() #split 으로 a와 b를 한번에 입력받을경우 나누어 저장
 A = int(A)
 B = int(B)
 
-print(A+B, A-B, A*B, A//B, A%B, sep='\n') #sep \n 으로 줄바꾸어 표기 
+print(A+B, A-B, A*B, A//B, A%B, sep='\n') #sep \n 으로 줄바꾸어 표기
 """
 
 # 3번 2558 (첫재 줄에 세자리 자연수 둘째줄에 세자리 자연수가 주어질때 각 세자리 곱셈의 연산과정 보여주기)
-""" 
+"""
 A=int(input()) #입력값을 정수로 저장
 B=str(input()) #입력값을 문자열로 저장
-print(A*int(B[-1]), A*int(B[-2]), A*int(B[-3]), A*int(B), sep='\n') #문자열인 B를 int형으로 변환하여 A와 곱한다.
+#문자열인 B를 int형으로 변환하여 A와 곱한다.
+print(A*int(B[-1]), A*int(B[-2]), A*int(B[-3]), A*int(B), sep='\n')
  """
 
 # 4번 9498 (시험성적)
@@ -94,7 +98,7 @@ for i in range(N):
     print() """
 
 # 10번 10871 x보다 작은수 찾기
-""" 
+"""
 N, X = map(int,input().split())
 L = list(map(int,input().split())) #list(map(함수, 리스트)
 
@@ -108,14 +112,14 @@ for i in range(N):
 """ from typing import Sequence
 
 def max(a:Sequence):
-    
+
     maximum = a[0]
-    
+
     for i in range(1, len(a)):
         if a[i]>maximum:
             maximum = a[i]
     return maximum
-    
+
 A=[None]*9
 
 for i in range(9):
@@ -124,7 +128,7 @@ for i in range(9):
 print(max(A), A.index( max(A) )+1, sep='\n') """
 
 # 12번 8958 ox퀴즈
-""" 
+"""
 N=int(input())
 test=[None]*N
 
@@ -174,7 +178,7 @@ def per(a):
             count+=1
     percentage = round(count/a[0]*100,3)
     return percentage
-    
+
 for i in range(cls):
  print(f'{format(per(SCORE[i]),".3f")}%')
  """
@@ -185,7 +189,7 @@ for i in range(cls):
 b=int(input())
 c=int(input())
 
-#숫자를 문자열로 쪼개기
+# 숫자를 문자열로 쪼개기
 D=list(str(a*b*c))
 # print(a*b*c)
 # print(D[0])
@@ -202,7 +206,7 @@ while n<10:
  """
 
 # 15번 15596번 정수 N개의 합
-""" 
+"""
 a = [1,2,3]
 
 def solve(a: list) -> int:
@@ -214,7 +218,7 @@ def solve(a: list) -> int:
 print(solve(a)) """
 
 # 16번 11654 아스키코드
-""" 
+"""
 n = input()
 print(ord(n)) #ord() 입력된 문자를 아스키 코드값으로 반환, chr() 아스키코드를 문자로 반환
  """
@@ -245,7 +249,7 @@ print(len(a))
 
 # 19번 2908번 상근이동생 상수
 
-""" 
+"""
 
 a,b=input().split()
 a=int(a[::-1])
@@ -253,14 +257,14 @@ b=int(b[::-1])
 
 if a>b:
     print(a)
-else : 
+else :
     print(b)
 
 """
 
 # 20번 2869 달팽이는 올라가고 싶다.
 
-""" 
+"""
 A, B, V = map(int,input().split())
 a = (V-A)%(A-B)
 b = (V-A)//(A-B)
@@ -271,8 +275,7 @@ else:
     print(b+2)     """
 
 # 21번 1987번 소수찾기
-""" import sys
-input = sys.stdin.readline
+"""
 
 n = int(input())
 y=list(map(int,input().split()))
@@ -307,15 +310,14 @@ print(count) """
 # 22 9020 골드바흐의 추측 https://www.acmicpc.net/problem/9020
 
 
-""" import sys
-input = sys.stdin.readline
+"""
 
 def prime(p):
     if p==1:
         return False
     for i in range(2,p):
         if p%i==0:
-            return False 
+            return False
     return True
 
 a = int(input())
@@ -336,8 +338,7 @@ for i in even:
 
 # 23번 한수 https://www.acmicpc.net/problem/1065
 
-""" import sys
-input = sys.stdin.readline
+"""
 
 
 def hansu(N):
@@ -358,7 +359,7 @@ print(hansu(N))
  """
 
 # 24번 종이자르기 https://www.acmicpc.net/problem/2628
-""" 
+"""
 def max(a:list):
     max =0
     for i in range(1, len(a)):
@@ -393,7 +394,7 @@ print(max(X)*max(Y)) """
         n = 1
     else:
          for i in range(1,a+1):
-            n*=i 
+            n*=i
     return n
 
 
@@ -402,7 +403,7 @@ print(fac(a))
  """
 
 # 재귀함수로 구하기 재귀함수의 예를 들뿐 효율적이진 않다.
-""" 
+"""
 def fac(n:int)->int:
     if n>0:
         return n*fac(n-1)
@@ -413,7 +414,7 @@ n= int(input())
 print(fac(n)) """
 
 # 26번 하노이 탑 https://www.acmicpc.net/problem/1914
-""" 
+"""
 
 def move(N, x, y):
 
@@ -435,15 +436,14 @@ if N <= 20:
 
  """
 # 27번 N-Queen https://www.acmicpc.net/problem/9663
-""" import sys
-input: sys.stdin.readline
+"""
 N=int(input())
 
 pos = [0]*N  #각 열에 배치한 퀸의 위치
 flag_a = [False]*N #각 행에 퀸 배치 체크
 flag_b = [False]*(N*2-1) #오른위아래 대각선 배치 체크
 flag_c = [False]*(N*2-1) #왼쪽위아래 대각선 배치 체크
-count = 0 
+count = 0
 
 def set(i:int)->None:
     global count
@@ -451,7 +451,7 @@ def set(i:int)->None:
     for j in range(N): #0행부터 놓는다.   # i 열 j 행
         if(not flag_a[j] and not flag_b[j+i]and not flag_c[i-j+(N-1)]):   #행이 비어 있다면 True가 아니라면?
             pos[i] = j
-            if i ==(N-1): 
+            if i ==(N-1):
                 count+=1
             else:
                 flag_a[j] = flag_b[j+i] = flag_c[i-j+(N-1)] = True
@@ -514,7 +514,7 @@ for i in range(n):
     print(a[i])
  """
 # 30번 수 정렬하기2 https://www.acmicpc.net/problem/2751 쉘 사용
-""" 
+"""
 def shell(a:list):
 
     n=len(a)
@@ -541,25 +541,23 @@ for i in range(x):
     print(a[i]) """
 
 # 31번 수 정렬하기3 https://www.acmicpc.net/problem/10989 도수정렬 후명이꺼 참조
-""" 
-import sys
+"""
 
-N = int(sys.stdin.readline())
-a = [0] * 10000
+N = int(input())
+a = [0] * 10001
 for i in range(N):
-    b = int(sys.stdin.readline().rstrip())
-    a[b - 1] += 1
+    b = int(input().strip())
+    a[b] += 1 #입력과 동시에 해당 위치에 카운트
 
-for j in range(10000):
-    if a[j]:
-        for k in range(a[j]):
-            print(j + 1)
+for j in range(10001):
+    if a[j]: #j번째에 숫자가 있다면?
+        for k in range(a[j]): #해당위치가 카운트 된 수만큼 반복하여 프린트
+            print(j + 1) #다시 숫자로 변환
 
  """
 
-# 32번 단어정렬 https://www.acmicpc.net/problem/1181 
-""" import sys
-input=sys.stdin.readline
+# 32번 단어정렬 https://www.acmicpc.net/problem/1181
+"""
 
 def lensort_char(a:list):
     a.sort()
@@ -570,9 +568,9 @@ def lensort_char(a:list):
         tmp = a[j] #문자의 길이
         while j>0 and len(a[j-1]) > len(tmp): #앞의 수가 뒤의 수보다 크다면?
                 a[j]=a[j-1] #뒤의를 앞의수로 바꾸고
-                j-=1 
-                a[j]=tmp #앞자리의 수는 미리 빼두었던 뒷자리수로 바꾼다. 
-    
+                j-=1
+                a[j]=tmp #앞자리의 수는 미리 빼두었던 뒷자리수로 바꾼다.
+
     for i in range(n-1):
         if a[i] != a[i+1]:
             print(a[i])
@@ -590,9 +588,72 @@ lensort_char(a)
 
  """
 # 함수이용
-""" a=set(a) #set 은 단순히 리스트를 set으로 바꿔줄 뿐 
+""" a=set(a) #set 은 단순히 리스트를 set으로 바꿔줄 뿐
 a=list(a)
 a.sort(key=len)
  """
 """ for i in range(len(a)):
     print(a[i]) """
+# 33번 일곱난쟁이 https://www.acmicpc.net/problem/2309
+# 백설공주에게 위기가! 일과를 마치고 돌아온 난쟁이가 아홉명?? 일곱난쟁이의 키의합은 100이다. 난쟁이를 찾아라
+
+""" a=[None]*9
+
+for i in range(9):
+    a[i]=int(input().strip())
+
+Spyheight_sum = int(sum(a)-100)
+
+def findspy(a:list)->None:
+    n=9
+    while n>=2:
+        for i in range(n-1):
+            if (a[n-1]+a[i])==Spyheight_sum: #9번째 난쟁이를 첫번째 난쟁이부터 더해본다.
+                a.pop(n-1)
+                a.pop(i)
+                return
+        else : n-=1
+
+    return
+
+
+findspy(a)
+a.sort()
+
+for i in range(7):
+    print(a[i]) """
+
+# 34번 차이를 최대로 https://www.acmicpc.net/problem/10819
+# N개의 정수로 이루어진 배열 A, 이 안에 들어있는 정수의 순서를 적절히 바꿔 인접한 수끼리의 차이의 절댓값을 최대로?
+
+""" 
+from itertools import permutations
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+A = list(map(int, input().split()))
+
+B = list(permutations(A))
+for i in range(len(B)):
+    a=0
+    for n in range(N-1):
+        a += abs(B[i][n]-B[i][n+1])
+    B[i]=a
+
+print(max(B))
+
+
+ """
+
+# 35번 외판원 순회 https://www.acmicpc.net/problem/10971
+
+import sys
+from itertools import permutations
+input = sys.stdin.readline
+
+N = int(input())
+root = list[None]*N
+
+for i in range(N):
+    

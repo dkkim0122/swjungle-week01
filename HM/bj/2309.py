@@ -8,8 +8,8 @@ dwarf_list.sort()
 sum_spy = sum(dwarf_list) - 100
 
 for i in range(9):
-    spy1 = dwarf_list[i]
-    spy2 = sum_spy - dwarf_list[i]
+    spy1 = dwarf_list[i] #int
+    spy2 = sum_spy - dwarf_list[i] #int
 
     if spy2 in dwarf_list[i + 1:]:
         dwarf_list.remove(spy1)
