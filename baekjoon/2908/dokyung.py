@@ -1,29 +1,6 @@
+# 파이썬 슬라이싱 활용하기
 
-def reassem(a:int) -> int:
-    lst =[]
-    i = 0
-    while a != 0:
-        rest = a % 10
-        a = a // 10
-        lst.append(rest)
-        i += 1
+a, b = input().split() # string으로 받아서
 
-    length = len(lst)
+print(max(int(a[::-1]), int(b[::-1])))  # 대소 비교하기
 
-    num = 0
-    for i in range(length):
-        num += lst[length - i - 1] * pow(10, i)
-    return num
-
-def larger(a:int, b:int):
-    if a >= b:
-        return a
-    else:
-        return b
-
-a, b = map(int, input().split())
-
-a1 = reassem(a)
-b1 = reassem(b)
-
-print(larger(a1, b1))
