@@ -431,31 +431,31 @@
 
 # 외판원 순회2
 # 순열
-# import sys
-# from itertools import permutations
-#
-#
-# def get_cost(lst):
-#     sum_cost = 0
-#     for i in range(N - 1):
-#         if cost[lst[i]][lst[i + 1]] != 0:
-#             sum_cost += cost[lst[i]][lst[i + 1]]
-#         else:
-#             return min_cost
-#     return sum_cost
-#
-#
-# N = int(sys.stdin.readline())
-# cost = list(list(map(int, sys.stdin.readline().split())) for _ in range(N))
-#
-# min_cost = 1000000 * N
-# for case in permutations(range(N)):
-#     if cost[case[-1]][case[0]] == 0:
-#         break
-#     tmp_cost = get_cost(case) + cost[case[-1]][case[0]]
-#     min_cost = min(min_cost, tmp_cost)
-#
-# print(min_cost)
+import sys
+from itertools import permutations
+
+
+def get_cost(lst):
+    sum_cost = 0
+    for i in range(N - 1):
+        if cost[lst[i]][lst[i + 1]] != 0:
+            sum_cost += cost[lst[i]][lst[i + 1]]
+        else:
+            return min_cost
+    return sum_cost
+
+
+N = int(sys.stdin.readline())
+cost = list(list(map(int, sys.stdin.readline().split())) for _ in range(N))
+
+min_cost = 1000000 * N
+for case in permutations(range(N)):
+    if cost[case[-1]][case[0]] == 0:
+        break
+    tmp_cost = get_cost(case) + cost[case[-1]][case[0]]
+    min_cost = min(min_cost, tmp_cost)
+
+print(min_cost)
 
 # 차이를 최대로
 # import sys
