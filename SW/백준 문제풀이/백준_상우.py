@@ -652,8 +652,33 @@ import sys
 from itertools import permutations
 input = sys.stdin.readline
 
-N = int(input())
-root = list[None]*N
+def dfs(start, next, value, visited:list):
+    global cost
+
+    if len(visited)==N:
+        if Route[next][start] !=0:
+            cost = min(cost, value+Route[next][start])
+        return
+    
+    for i in range(N):
+        if Route[next][i] != 0 and i != start and i not in visited:
+            visited.append(i)
+            dfs(start, i, value + Route[next][i], visited)
+
+N = int(input().strip())
+Route = [None]*N
+cost = sys.maxsize
+for i in range(N):
+    Route[i]=list(map(int,input().strip().split()))
 
 for i in range(N):
+    dfs(i, i, 0, [i])
+
+print(cost)
     
+    
+
+
+
+
+
