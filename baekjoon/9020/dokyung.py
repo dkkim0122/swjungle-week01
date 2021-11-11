@@ -1,21 +1,28 @@
 import sys
 input = sys.stdin.readline
 
-num = 10000
+def is_prime(a: int) -> bool:
+    if a % 2 == 0:  # 짝수이므로
+        return False
 
-is_prime = [False, False] + [True]*(num-1)
-for i in range(2, num + 1):
-    if is_prime[i] == True:
-        for j in range(i * 2, num+1, i):
-            is_prime[j] = False
+    sqr = int(a**(1/2))
 
-repeat = int(input())
+    for i in range(2, sqr + 1):
+        if a % i == 0:
+            return False
+    
+    return True
 
-for i in range(repeat):
-    n = int(input())
+def find(n: int) -> list:
     half = n//2
 
-    for j in range(half, 1, -1):
-        if is_prime[j] == True and is_prime[n-j] == True:
-            print(j, n - j)
+    for i in range(half, 1, -1):
+        if is_prime(i) and is_prime(n-i):
             break
+    print(i, n-i) 
+
+N = int(input())
+
+for i in range(N):
+    a = int(input())
+    find(a)
